@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName">
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:conf/important.properties</value>
+            </list>
+        </property>
+    </bean>
+    <context:component-scan
+            base-package="com.fnb.web.controller"
+            use-default-filters="false">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <mvc:default-servlet-handler/>
+    <bean id="pageInfo" class="org.springframework.data.domain.PageRequest">
+        <constructor-arg index="0">
+            <value>0</value>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <value>10</value>
+        </constructor-arg>
+    </bean>
+    <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/chart/**" location="/chart/"/>
+    <bean id="jsonUtil" class="com.common.springmvc.JsonUtil"/>
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean
+                    class="org.springframework.data.web.PageableHandlerMethodArgumentResolver">
+                <property name="fallbackPageable" ref="pageInfo"/>
+            </bean>
+        </mvc:argument-resolvers>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <property name="dateFormat">
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+
+    <!-- 文件上传处理 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property>
+        <property name="maxUploadSize" value="10485760"></property>
+    </bean>
+
+
+    <bean id="velocityConfigurer"
+          class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath" value="/WEB-INF/vm/"/>
+        <property name="configLocation" value="classpath:velocity.properties"/>
+    </bean>
+    <bean id="ViewResolver"
+          class="com.common.springmvc.velocity.SpringVelocityLayoutViewResolver">
+        <property name="velocityTools" ref="velocityTools"></property>
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".vm"/>
+        <property name="contentType">
+            <value>text/html;charset=UTF-8</value>
+        </property>
+        <property name="dateToolAttribute">
+            <value>dateTool</value>
+        </property>
+        <property name="numberToolAttribute">
+            <value>numberTool</value>
+        </property>
+        <property name="exposeRequestAttributes">
+            <value>true</value>
+        </property>
+        <property name="exposeSessionAttributes">
+            <value>true</value>
+        </property>
+        <property name="layoutUrl">
+            <value>layout/default.vm</value>
+        </property>
+    </bean>
+
+    <!-- Interceptors -->
+    <mvc:interceptors>
+        <!-- Login ticket interceptor , this is a common used interceptor-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="/login/**"/>
+            <mvc:exclude-mapping path="/changeLan**"/>
+            <bean class="com.common.web.interceptor.LoginContextInterceptor">
+                <property name="loginCookieKey" value="${login.cookie.key}"/>
+                <property name="loginUrl" value="http://cloud.${domain}/login"/>
+            </bean>
+        </mvc:interceptor>
+        <!-- Language interceptor , this is a customized interceptor-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/static/**"/>
+            <bean class="com.fnb.web.interceptor.LanguageHandlerInterceptorAdapter"/>
+        </mvc:interceptor>
+        <!-- Google validation interceptor , this is a customized interceptor-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/login/out"/>
+            <mvc:exclude-mapping path="/user/googleAuth"/>
+            <mvc:exclude-mapping path="/user/buildImage"/>
+            <mvc:exclude-mapping path="/user/buildAuthenticator"/>
+            <mvc:exclude-mapping path="/user/saveAuthenticator"/>
+            <bean class="com.fnb.web.interceptor.GoogleAuthInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.common.web.interceptor.CronsInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

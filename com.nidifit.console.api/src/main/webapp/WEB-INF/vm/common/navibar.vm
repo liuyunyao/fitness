@@ -1,0 +1,16 @@
+<div class="sidebar-shortcuts" id="sidebar-shortcuts" style="text-align:left;padding-left:15px;font-size: 13px;">
+	<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+		<i class="icon-home icon-large"></i><span class="menu-text" style="padding-left: 18px;">导航菜单 </span>
+
+	</div>
+
+	<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+		<span class="btn btn-success"></span>
+
+		<span class="btn btn-info"></span>
+
+		<span class="btn btn-warning"></span>
+
+		<span class="btn btn-danger"></span>
+	</div>
+</div><!-- #sidebar-shortcuts -->

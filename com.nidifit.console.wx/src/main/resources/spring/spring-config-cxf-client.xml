@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+           http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+           http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd"
+       default-autowire="byName">
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+    <http-conf:conduit name="*.http-conduit">
+        <http-conf:client ConnectionTimeout="240000" ReceiveTimeout="240000" AsyncExecuteTimeout="240000"/>
+    </http-conf:conduit>
+    <!--dateServiceRPC-->
+    <!--<jaxws:client id="dateServiceRPC" serviceClass="com.fnb.rpc.DateServiceRPC"-->
+                  <!--address="http://localhost:8080/emis/rpc/dateServiceRPC"/>-->
+
+    <!--adapterRPC-->
+    <!--<jaxws:client id="adapterRPC" serviceClass="com.fnb.adapter.rpc.AdapterRPC"-->
+                  <!--address="http://localhost:8080/emis/rpc/adapterRPC">-->
+        <!--<jaxws:outInterceptors>-->
+            <!--<bean class="com.common.webservice.AuthDateHeader">-->
+                <!--<property name="serverDataProvider" ref="emisServerDataProvider"></property>-->
+                <!--<property name="key" value="f9cd4d94339c4e819349a456173f1526"/>-->
+            <!--</bean>-->
+        <!--</jaxws:outInterceptors>-->
+    <!--</jaxws:client>-->
+
+    <!--<bean id="emisServerDataProvider" class="com.fnb.service.adapter.ServerDataProviderImpl">-->
+        <!--<property name="emisDateServiceRPC" ref="dateServiceRPC"/>-->
+    <!--</bean>-->
+</beans>

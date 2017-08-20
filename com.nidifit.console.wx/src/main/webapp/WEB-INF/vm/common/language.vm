@@ -1,0 +1,50 @@
+#set($cnPage = $homeModule.getTarget("login/changeLocal"))
+#set($cnPage =$cnPage.addQueryData("language","cn"))
+#set($cnPage =$cnPage.addQueryData("url",$currentUrl))
+
+#set($enPage = $homeModule.getTarget("login/changeLocal"))
+#set($enPage =$enPage.addQueryData("language","en"))
+#set($enPage =$enPage.addQueryData("url",$currentUrl))
+#* version 1.0.0 *#
+#*<div class="col-md-4 col-md-offset-8 language">
+  <ul>
+        #if($langType == 'cn')
+            <li class="line_r active"><a href="$cnPage">$common-cn</a></li>
+            <li class="line_r "><a href="$enPage">$common-en</a></li>
+        #elseif($langType == 'en')
+            <li class="line_r "><a href="$cnPage">$common-cn</a></li>
+            <li class="line_r active"><a href="$enPage">$common-en</a></li>
+        #end
+    </ul>
+</div>*#
+
+#* version 1.0.1 *#
+<div class="container">
+    <div class="row col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
+        <div class="col-sm-2 col-md-2 col-sm-offset-10 col-md-offset-10">
+            <div class="dropdown n-dropdown1">
+                #if($langType == 'cn')
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        <span class="language-text"><li class="line_r active"><a href="#" lan="cn" onclick="changeLang('cn');">$common-cn</a></li></span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a href="#" lan="en" onclick="changeLang('en');">$common-en</a>
+                        </li>
+                    </ul>
+                #elseif($langType == 'en')
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        <span class="language-text"><li class="line_r active"><a href="#" lan="en" onclick="changeLang('en');">$common-en</a></li></span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a href="#" lan="cn" onclick="changeLang('cn');">$common-cn</a>
+                        </li>
+                    </ul>
+                #end
+            </div>
+        </div>
+    </div>
+</div>

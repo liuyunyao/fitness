@@ -1,0 +1,31 @@
+## version 1.0.1
+#set($layout="layout/blank.vm")
+<head>
+    <title></title>
+    #parse("/head/head.vm")
+    <link rel="stylesheet" type="text/css" href="${baseUrl}/static/css/unlocking.css?ver=${ver}"/>
+    <script src="${baseUrl}/static/js/fun/treadmill/unlocking.js?ver=${ver}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body id="unlocking">
+<div class="schedual-container">
+    <p class="schedual-text">正在开锁……</p>
+    <div class="schedual-box">
+        <div class="schedual-bar">
+        </div>
+    </div>
+</div>
+<div class="mask">
+    <div class="tip-container">
+        <div class="tip">
+            <div class="tip-top">
+                <h5 class="title">标题</h5>
+                <p class="content">开锁成功</p>
+            </div>
+            <div class="tip-bottom treadmill-hidden">
+                <a href="javascript:void(0)" onclick="unlocking_submit(this);">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+

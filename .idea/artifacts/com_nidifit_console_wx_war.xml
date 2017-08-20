@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="com.nidifit.console.wx:war">
+    <output-path>$PROJECT_DIR$/com.nidifit.console.wx/target</output-path>
+    <root id="archive" name="wx.war">
+      <element id="artifact" artifact-name="com.nidifit.console.wx:war exploded" />
+    </root>
+  </artifact>
+</component>

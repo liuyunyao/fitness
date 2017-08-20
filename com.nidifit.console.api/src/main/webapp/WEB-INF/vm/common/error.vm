@@ -1,0 +1,14 @@
+#set($layout="layout/blank.vm")
+<head>
+    <title>$!error-page</title>
+    #parse("/head/head.vm")
+    <link rel="stylesheet" type="text/css" href="${root}/static/css/error.css?ver=${ver}"/>
+</head>
+<body id="errorPage">
+<img class="sweat" src="${root}/static/img/sweat.png"/>
+<img class="oops" src="${root}/static/img/oops.png"/>
+<p class="error-content">$!{value.message}</p>
+<div class="submitBtn treadmill-hidden">
+    <a>返回</a>
+</div>
+</body>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="300"/>
+    </bean>
+    <!--
+        Redis
+    -->
+    <bean id="jedis.shardInfo" class="redis.clients.jedis.JedisShardInfo">
+        <!--Advanced URI injection redis://username:passwd@ip:port/dbIndex-->
+        <constructor-arg index="0" value="redis://:redis@192.168.89.47:6379/15"/>
+    </bean>
+
+    <bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="jedis.shardInfo"/>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="redisDbDao" class="com.common.redis.RedisDbDaoImpl">
+        <property name="use" value="true"/>
+    </bean>
+
+
+    <bean id="serverAddress1" class="com.mongodb.ServerAddress">
+        <constructor-arg index="0" type="java.lang.String" value="${mongodb.address}" />
+        <constructor-arg index="1" type="int" value="${mongodb.port}"/>
+    </bean>
+
+    <bean id="mongoDBUtil" class="com.common.util.MongoDBUtil" destroy-method="destory">
+        <property name="isSave" value="false" />
+        <property name="connectionPerHost" value="50" />
+        <property name="connectionTimeout" value="12000" />
+        <property name="userName" value="${mongodb.username}" />
+        <property name="password" value="${mongodb.password}" />
+        <property name="dbName" value="${mongodb.database}" />
+        <property name="addressList">
+            <list>
+                <ref bean="serverAddress1" />
+            </list>
+        </property>
+    </bean>
+</beans>

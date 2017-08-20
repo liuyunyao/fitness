@@ -1,0 +1,134 @@
+body {
+	background: #F2F2F2;
+}
+
+form {
+	padding: 2.6rem 1.8rem 0;
+}
+
+.title {
+	padding-bottom: 0.5rem;
+	margin-bottom: 0.9rem;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.title span {
+	font-size: 1.3rem;
+	color: #9b9b9b;
+	letter-spacing: 0.04rem;
+}
+
+.sex-content {
+	width: 100%;
+}
+
+.sex-content span {
+	width: 50%;
+}
+
+.select-item {
+	display: inline-block;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	background: #D8D8D8;
+	font-size: 1.2rem;
+	color: #555555;
+	letter-spacing: 0.04rem;
+	float: left;
+}
+
+.active {
+	background: #ea5e59;
+	color: white;
+}
+
+.input-container {
+	padding: 6.15rem 0 5.3rem;
+}
+
+.input-group:not(:last-of-type) {
+	margin-bottom: 3.15rem;
+}
+
+.input-group span {
+	font-size: 1.3rem;
+	color: #9b9b9b;
+	letter-spacing: 0.04rem;
+}
+
+.input-group .input-box {
+	position: relative;
+	display: inline-block;
+}
+
+.input-group .input-box input {
+	margin: 0 1rem 0 1.25rem;
+	background: #f7f7f7;
+	border: 1px solid #bcbcbc !important;
+	width: 16.9rem;
+	height: 2.8rem;
+	font-size: 1.3rem;
+	color: #4a4a4a;
+	letter-spacing: 0.04rem;
+	text-indent: 1.5rem;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+.input-group .input-box label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 1rem 0 1.25rem;
+	background: #f7f7f7;
+	border: 1px solid #bcbcbc !important;
+	width: 16.9rem;
+	height: 2.8rem;
+	font-size: 1.3rem;
+	color: #4a4a4a;
+	letter-spacing: 0.04rem;
+	text-indent: 1.5rem;
+	border-radius: 0;
+	display: inline-block;
+}
+
+.input-group .input-box .error-tip {
+	position: absolute;
+	top: -3rem;
+	left: 1.25rem;
+	height: 3rem;
+	line-height: 3rem;
+}
+
+::-webkit-input-placeholder {
+	font-size: 1.3rem;
+	color: #4a4a4a;
+	letter-spacing: 0.04rem;
+}
+
+.athleticgoal-content {
+	font-size: 0;
+}
+
+.athleticgoal-content span {
+	width: 25%;
+	margin-right:1.2px;
+}
+
+.athleticgoal-content span:last-of-type {
+	margin-right: 0;
+}
+
+.button-container {
+	margin: 6.8rem 2.05rem 0;
+	background: #ea5e59;
+	border-radius: 5rem;
+	height: 4.2rem;
+	line-height: 4.2rem;
+}
+
+.button-container a {
+	font-size: 1.7rem;
+	color: #ffffff;
+	letter-spacing: 0.18rem;
+}

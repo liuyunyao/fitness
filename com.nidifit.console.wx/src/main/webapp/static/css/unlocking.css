@@ -1,0 +1,141 @@
+body#unlocking {
+	background: url(../img/userInfoInput_bg.jpg) no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+
+/*-----------------------------------------unlocking bar----------------------------------------------------*/
+
+#unlocking .schedual-container {
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width:21.7rem;
+	height:5rem;
+	margin: -2.5rem 0 0 -10.85rem;
+	z-index: -1;
+}
+
+#unlocking .schedual-container .schedual-text {
+	height: 1.65rem;
+	line-height: 1.65rem;
+	font-size: 1.2rem;
+	color: #ffffff;
+	text-align: center;
+}
+
+#unlocking .schedual-container .schedual-box {
+	margin: 1rem auto 0;
+	position: relative;
+	width: 100%;
+	border-radius: 5rem;
+	height: 1.2rem;
+	background: rgba(255, 255, 255, 0.32);
+}
+
+#unlocking .schedual-container .schedual-box .schedual-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1.2rem;
+	width: 0%;
+	border-radius: 5rem;
+	background: #12aaeb;
+	animation: schedualStart 1s forwards;
+	-webkit-animation: schedualStart 1s forwards;
+}
+
+#unlocking .schedual-container .schedual-box .active {
+	animation: schedualEnd 1s forwards;
+	-webkit-animation: schedualEnd 1s forwards;
+}
+
+@keyframes schedualStart {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 75%;
+	}
+}
+
+@-webkit-keyframes schedualStart
+/* Safari and Chrome */
+
+{
+	from {
+		width: 0%;
+	}
+	to {
+		width: 75%;
+	}
+}
+
+@keyframes schedualEnd
+/* Safari and Chrome */
+
+{
+	from {
+		width: 75%;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes schedualEnd
+/* Safari and Chrome */
+
+{
+	from {
+		width: 75%;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+
+/*-----------------------------------------unlocking tipbox----------------------------------------------------*/
+
+.tip-container{
+	margin:0 4.7rem;
+	padding-top:15.7rem;
+	text-align: center;
+	z-index: 11;
+	max-width: 28rem;
+}
+
+.tip{
+	width: 100%;
+	background: white;
+	border-radius: 0.4rem;
+}
+.tip-top{
+	padding-top: 2.5rem;
+	
+}
+.tip-top .title{
+	font-size: 1.6rem;
+}
+.tip-top .content{
+	font-size: 1.5rem;
+	padding: 0.9rem 0 1.5rem 0;
+	color: #888888;
+}
+.tip-bottom{
+	height:5rem;
+	line-height: 5rem;
+	border-top: 1px solid #e5e5e5;
+}
+.tip-bottom a{
+	text-align: center;
+	font-size: 1.6rem;
+	color: #12aaeb;
+	text-decoration: none;
+	cursor: pointer;
+}

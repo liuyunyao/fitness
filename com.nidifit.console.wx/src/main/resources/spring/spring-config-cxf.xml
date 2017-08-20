@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+           http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+           http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd"
+       default-autowire="byName">
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+    <http-conf:conduit name="*.http-conduit">
+        <http-conf:client ConnectionTimeout="2400000" ReceiveTimeout="2400000"/>
+    </http-conf:conduit>
+
+    <!--
+        Treadmill RPC interface
+    -->
+    <bean id="treadmillInfoRPCService" class="com.nidone.fitness.service.impl.TreadmillInfoRPCServiceImpl"></bean>
+    <jaxws:endpoint id="treadmillServiceRPC" implementor="#treadmillInfoRPCService"
+                    address="/treadmillServiceRPC"></jaxws:endpoint>
+</beans>

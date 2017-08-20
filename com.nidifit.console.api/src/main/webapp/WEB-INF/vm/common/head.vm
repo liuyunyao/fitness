@@ -1,0 +1,21 @@
+<head>
+    <meta charset="utf-8"/>
+    <title>Be Angular | Bootstrap Admin Web App with AngularJS</title>
+    #if($header==true)
+        $headerContent
+    #else
+        <meta name="description"   content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <link rel="stylesheet" href="${root}/static/css/bootstrap.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/animate.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/font-awesome.min.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/simple-line-icons.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/font.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/datepicker.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/bootstrap-timepicker.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/daterangepicker.css?ver=${ver}" type="text/css"/>
+        <link rel="stylesheet" href="${root}/static/css/bootstrap.min.css?ver=${ver}" type="text/css"/>
+        <script type="text/javascript" src="${root}/static/js/lib/jquery.js?ver=${ver}"></script>
+        <script type="text/javascript" src="${root}/static/js/bootstrap.min.js?ver=${ver}"></script>
+    #end
+</head>

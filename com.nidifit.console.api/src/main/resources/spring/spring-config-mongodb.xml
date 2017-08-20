@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/data/mongo
+          http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-autowire="byName">
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+    </bean>
+    <bean id="jedis.shardInfo" class="redis.clients.jedis.JedisShardInfo">
+        <constructor-arg index="0" value="${redis.url}"/>
+    </bean>
+
+    <bean id="shardedJedisPool" class="redis.clients.jedis.ShardedJedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="jedis.shardInfo"/>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="redisDbDao" class="com.common.redis.RedisDbDaoImpl">
+        <property name="use" value="true"/>
+    </bean>
+    <mongo:mongo id="mongo" replica-set="${mongodb.address}"/>
+    <mongo:db-factory dbname="${mongodb.database}" mongo-ref="mongo" username="${mongodb.username}" password="${mongodb.password}"/>
+
+    <bean id="template" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+    </bean>
+    <bean class="com.common.mongo.SaveMongoEventListener"></bean>
+</beans>

@@ -1,0 +1,30 @@
+## version 1.0.1
+#set($layout="layout/blank.vm")
+<head>
+    <title></title>
+    #parse("/head/head.vm")
+    <link rel="stylesheet" type="text/css" href="${baseUrl}/static/css/qrcode.css?ver=${ver}"/>
+    <script src="${baseUrl}/static/js/fun/treadmill/qrcode.js?ver=${ver}" type="text/javascript" charset="utf-8"></script>
+</head>
+<body id="qrcode">
+<div class="desc-img">
+    <img class="logo" src="${baseUrl}/static/img/logo.png"/>
+    <img class="note" src="${baseUrl}/static/img/qrcode_note.png"/>
+    <img class="justrun" src="${baseUrl}/static/img/qrcode_justrun.png" alt=""/>
+</div>
+<div class="content">
+    <div class="row">
+        <div class="qrcode-bg">
+            <img id="nidoneIMG" src="${qrCodeUrl}"/>
+        </div>
+        <p>Nidone</p>
+    </div>
+    <div class="row">
+        <div class="qrcode-bg">
+            <img src="${qrCodeUrl}"/>
+        </div>
+        <p>微信</p>
+    </div>
+</div>
+</body>
+

@@ -1,0 +1,79 @@
+.header {
+	height: 24rem;
+}
+
+.header .bg-container .bg {
+	height: 24rem;
+}
+
+.introduce .detail {
+	position: absolute;
+	bottom: 2.6rem;
+	left: 2.7rem;
+	/*padding: 3.5rem 0 0 2.7rem;*/
+	text-align: left;
+	color: rgba(255, 255, 255, 0.9);
+	z-index: 100;
+}
+
+.detail .time-distance {
+	font-size: 1.5rem;
+	letter-spacing: 0.05rem;
+}
+
+.detail .time-distance span {
+	font-size: 2.2rem;
+}
+
+.detail .line-horizontal {
+	width: 0.8rem;
+	height: 0.2rem;
+	background: rgba(255, 255, 255, 0.9);
+	margin: 0.95rem 0;
+	font-size: 0;
+}
+
+.detail .goal {
+	font-size: 1.2rem;
+	letter-spacing: 0.04rem;
+}
+
+
+/*-------------------------------------training-detail-----------------------------*/
+
+.training-detail {
+	padding: 1.85rem 1.75rem 0rem;
+}
+
+.training-detail .title {
+	font-size: 1.3rem;
+	color: #9b9b9b;
+	letter-spacing: 0;
+	line-height: 1.3rem;
+	padding: 0 0 1rem 0.35rem;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.training-detail .echart-container {
+	padding: 1.35rem 0 0 0rem;
+	width: 34rem;
+	height: 25rem;
+	height: 16rem;
+}
+
+.training-detail #main {
+	width: 100%;
+	height: 100%;
+}
+
+.training-detail .button-container {
+	margin: 3.5rem 1.35rem 0;
+	height: 4.2rem;
+	line-height: 4.2rem;
+	border-radius: 5rem;
+}
+
+.training-detail .button-container a {
+	font-size: 1.7rem;
+	letter-spacing: 0.18rem;
+}

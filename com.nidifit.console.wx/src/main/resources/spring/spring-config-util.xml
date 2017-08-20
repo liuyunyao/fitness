@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       		http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+	<bean class="com.common.web.url.JdUrl" id="homeModule">
+		<property name="url" value="http://${domain}/" />
+		<property name="charsetName" value="UTF-8" />
+	</bean>
+	<bean id="rpcAccessKey" class="java.lang.String" >
+		<constructor-arg index="0" value="${rpc.accessKey}" />
+	</bean>
+	<bean class="com.common.constants.GlobalContstants" id="global" />
+	<bean id="velocityTools" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="stringUtils">
+					<bean class="com.common.util.StringUtils" />
+				</entry>
+				<entry key="dateUtil">
+					<bean class="com.common.util.DateUtil" />
+				</entry>
+				<entry key="enumUtils">
+					<bean class="com.common.util.GlosseryEnumUtils" />
+				</entry>
+				<entry key="homeModule" value-ref="homeModule" />
+				<entry key="global" value-ref="global" />
+			</map>
+		</constructor-arg>
+	</bean>
+	
+</beans>

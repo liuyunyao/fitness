@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>课程</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/course.css" />
+		<script src="/static/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/common_mobile.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/fun/treadmill/course.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="bg-container">
+				<img class="bg" src="/static/img/course_header_bg.jpg" />
+			</div>
+			<div class="introduce">
+				<div class="summary">
+					<p class="slogan">
+						跑出好身材
+						<span class="line-vertical"></span>
+					</p>
+					<p class="schedule">初级: 共36课，已完成1课时</p>
+				</div>
+				<div class="detail">
+					<p class="time-distance">本次课程，<span>36</span>分钟，大约<span>5.6</span>公里</p>
+					<p class="line-horizontal"></p>
+					<p class="goal">课程目的：<span>建立跑步基础</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="training-detail">
+			<div class="title">训练详情</div>
+			<div class="echart-container">
+				<div id="main"></div>
+			</div>
+			<div class="button-container" onclick="location='/v1/trainingplan'">
+				<a class="btn" href="javascript:void(0);">查看训练计划</a>
+			</div>
+		</div>
+		<div class="height-100"></div>
+	</body>
+
+</html>

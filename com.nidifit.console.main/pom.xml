@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>com.nidifit.console</artifactId>
+        <groupId>com.nidifit.console</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>com.nidifit.console.main</artifactId>
+    <packaging>war</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.nidifit.console</groupId>
+            <artifactId>com.nidifit.console.service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <!-- Set different environment-->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <log.level>WARN</log.level>
+                <log.home>${user.home}</log.home>
+
+                <cookie.key>56dc72e50c2c4a879e46b5b4695184cd</cookie.key>
+                <pass.key>${cookie.key}</pass.key>
+                <login.cookie.key>_web</login.cookie.key>
+
+                <!-- mongodb -->
+                <mongodb.address>192.168.89.47:27017</mongodb.address>
+                <mongodb.username></mongodb.username>
+                <mongodb.password></mongodb.password>
+                <mongodb.database>fitness_data</mongodb.database>
+
+                <!-- mysql -->
+                <jdbc.url>
+                    <![CDATA[jdbc:mysql://192.168.89.47:3306/fitness?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull]]>
+                </jdbc.url>
+                <jdbc.username>fitness-dev</jdbc.username>
+                <jdbc.password>fitness-dev@123</jdbc.password>
+                <!-- redis -->
+                <redis.url>redis://192.168.89.47:8937/1</redis.url>
+
+                <domain>fitness.60living.net</domain>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <domain>192.168.89.45:7070/main</domain>
+                <log.level>WARN</log.level>
+                <!-- Set user's home directory-->
+                <log.home>${user.home}</log.home>
+            </properties>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <domain>fitness.60living.com</domain>
+                <log.level>WARN</log.level>
+                <!-- Set user's home directory-->
+                <log.home>/home/fitness</log.home>
+            </properties>
+        </profile>
+    </profiles>
+    <build>
+        <finalName>main</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <version>1.1</version>
+                <configuration>
+                    <!-- Make this as 9091-->
+                    <port>9091</port>
+                    <!--<port>80</port>-->
+                    <path>/main</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

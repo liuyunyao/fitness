@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nidone.fitness.domain.TreadmillInfo">
+    <sql id="limit">
+        <if test="startRow != null and endRow !=null">limit #{startRow},#{endRow}</if>
+    </sql>
+    <sql id="orderCondition">
+        <if test="orderColumn != null and orderColumn != ''">ORDER BY $orderColumn</if>
+    </sql>
+
+    <sql id="Condition">
+        <where>
+            <if test="id != null "><![CDATA[AND id =#{id}]]></if>
+            <if test="accessKey != null "><![CDATA[AND access_key =#{accessKey}]]></if>
+            <if test="apiPassKey != null "><![CDATA[AND api_pass_key =#{apiPassKey}]]></if>
+            <if test="name != null "><![CDATA[AND name =#{name}]]></if>
+            <if test="address != null "><![CDATA[AND address =#{address}]]></if>
+            <if test="phone != null "><![CDATA[AND phone =#{phone}]]></if>
+            <if test="email != null "><![CDATA[AND email =#{email}]]></if>
+            <if test="debtor != null "><![CDATA[AND debtor =#{debtor}]]></if>
+            <if test="customerApi != null "><![CDATA[AND customer_api =#{customerApi}]]></if>
+            <if test="createTime != null "><![CDATA[AND create_time =#{createTime}]]></if>
+            <if test="updateTime != null "><![CDATA[AND update_time =#{updateTime}]]></if>
+            <if test="status != null "><![CDATA[AND status =#{status}]]></if>
+            <if test="delStatus != null "><![CDATA[AND del_status =#{delStatus}]]></if>
+        </where>
+    </sql>
+    <sql id="columns">
+	id as id ,access_key as accessKey,api_pass_key as apiPassKey,name as name ,address as address ,phone as phone ,email as email ,debtor as debtor ,customer_api as customerApi,create_time as createTime ,update_time as updateTime ,status as status ,del_status as delStatus
+</sql>
+    <insert id="insert" parameterType="treadmillInfo" useGeneratedKeys="true" keyProperty="id">
+        insert into agent_info
+        (id,access_key,api_pass_key,name,address,phone,email,debtor,customer_api,create_time,update_time,status,del_status)
+        values
+        (#{id},#{accessKey},#{apiPassKey},#{name},#{address},#{phone},#{email},#{debtor},#{customerApi},#{createTime},#{updateTime},#{status},#{delStatus})
+        <selectKey keyProperty="id" resultType="long" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+    <delete id="del" parameterType="long">
+        update   agent_info  set del_status=1 where id = #{id}
+</delete>
+
+    <update id="update" parameterType="treadmillInfo">
+        update agent_info
+        <set>
+            <if test="accessKey != null "><![CDATA[ access_key =#{accessKey},]]></if>
+            <if test="apiPassKey != null "><![CDATA[ api_pass_key =#{apiPassKey},]]></if>
+            <if test="name != null "><![CDATA[ name =#{name},]]></if>
+            <if test="address != null "><![CDATA[ address =#{address},]]></if>
+            <if test="phone != null "><![CDATA[ phone =#{phone},]]></if>
+            <if test="email != null "><![CDATA[ email =#{email},]]></if>
+            <if test="debtor != null "><![CDATA[ debtor =#{debtor},]]></if>
+            <if test="customerApi != null "><![CDATA[ customer_api =#{customerApi},]]></if>
+            <if test="createTime != null "><![CDATA[ create_time =#{createTime},]]></if>
+            <if test="updateTime != null "><![CDATA[ update_time =#{updateTime},]]></if>
+            <if test="status != null "><![CDATA[ status =#{status},]]></if>
+            <if test="delStatus != null "><![CDATA[ del_status =#{delStatus},]]></if>
+        </set>
+        where id=#{id}
+    </update>
+    <select id="queryCount" parameterType="treadmillInfo" resultType="int">
+        select count(1) from agent_info
+        <include refid="Condition"/>
+    </select>
+    <select id="query" parameterType="treadmillInfo" resultType="treadmillInfo">
+        select
+        <include refid="columns"/>
+        from agent_info
+        <include refid="Condition"/>
+        <include refid="limit"/>
+    </select>
+</mapper>

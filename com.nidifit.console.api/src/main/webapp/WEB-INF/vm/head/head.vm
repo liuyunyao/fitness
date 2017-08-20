@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+##<meta http-equiv="X-UA-Compatible" content="IE=edge">
+##<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+##<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+##<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+##<!--[if lt IE 9]>
+##<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+##<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+##<![endif]-->
+<link rel="stylesheet" href="${baseUrl}/static/css/global.css?ver=${ver}"/>
+<script src="${baseUrl}/static/js/jquery.js?ver=${ver}" type="text/javascript" charset="utf-8"></script>
+<script src="${baseUrl}/static/js/common.js?ver=${ver}" type="text/javascript" charset="utf-8"></script>
+<link rel="icon" href="/static/img/11.ico">

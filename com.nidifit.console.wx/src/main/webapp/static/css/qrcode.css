@@ -1,0 +1,81 @@
+body#qrcode {
+	background: url(../img/qrcode_page_bg.png) no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	width: 100%;
+	height: 100%;
+	/*overflow: hidden;*/
+}
+
+#qrcode .desc-img img {
+	/*display: block;*/
+	/*margin: 0 auto;*/
+	position: absolute;
+}
+
+#qrcode .logo {
+	/*padding-top: 8.9rem;*/
+	width: 27.5rem;
+	height: 6.5rem;
+	top: 8.9rem;
+	left: 50%;
+	margin-left: -13.75rem;
+}
+
+#qrcode .note {
+	/*padding-top:14.6rem;*/
+	width: 30.85rem;
+	height: 9rem;
+	bottom: 15rem;
+	left: 50%;
+	margin-left: -15.425rem;
+}
+
+#qrcode .justrun {
+	/*padding-top: 8.9rem;*/
+	width: 11.5rem;
+	height: 2.7rem;
+	bottom:1.2rem;
+	left: 50%;
+	margin-left: -5.775rem;
+}
+
+#qrcode .content {
+	position: absolute;
+	bottom: 9.25rem;
+	left: 0;
+	width: 100%;
+	text-align: justify;
+}
+
+#qrcode .content .row:first-of-type {
+	float: left;
+	margin-left: 10%;
+}
+
+#qrcode .content .row:last-of-type {
+	float: right;
+	margin-right: 10%;
+}
+
+#qrcode .content .row .qrcode-bg {
+	/*width: 12.75rem;*/
+	/*height: 12.75rem;*/
+	/*background-size: 12.75rem 12.75rem;*/
+	/*background: url(../img/qrcode_bg.png);*/
+	/*padding: 1.25rem;*/
+}
+
+#qrcode .content .row .qrcode-bg img {
+	width: 100%;
+	height: 100%;
+}
+
+#qrcode .content .row p {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	font-size: 1.8rem;
+	margin-top: 0.75rem;
+	text-align: center;
+	color: white;
+}

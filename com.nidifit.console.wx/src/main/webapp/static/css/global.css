@@ -1,0 +1,215 @@
+html {
+	height: 100%;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+input{
+	outline: none;
+}
+
+.icon-record {
+	background: url(../img/icon/record.png) no-repeat;
+	background-size: contain;
+}
+
+.icon-equipment {
+	background: url(../img/icon/equipment.png) no-repeat;
+	background-size: contain;
+}
+
+.icon-next {
+	background: url(../img/icon/arror.png) no-repeat;
+	background-size: contain;
+}
+
+.icon-todo {
+	background: url(../img/icon/todo.png);
+	background-size: contain;
+}
+
+.icon-done {
+	background: url(../img/icon/done.png);
+	background-size: contain;
+}
+
+.icon-time{
+	background: url(../img/icon/time.png);
+	background-size: contain;
+}
+
+.icon-calorie{
+	background: url(../img/icon/calorie.png);
+	background-size: contain;
+}
+
+.treadmill-hidden {
+	display: none;
+}
+
+.radio-item,
+.tworadio-switch {
+	display: inline-block;
+}
+
+.radio-item label,
+.tworadio-switch label {
+	display: inline-block;
+	height: 1.8rem;
+	width: auto;
+	line-height: 1.8rem;
+	background: url("../img/radio_uncheck.png") 3.15rem 0 no-repeat;
+	background-size: contain;
+	padding-left: 6.2rem;
+	font-size: 1rem;
+	color: #ffffff;
+}
+
+.radio-item label.active,
+.tworadio-switch label.active {
+	background: url("../img/radio_checked.png") 3.15rem 0 no-repeat;
+	background-size: contain;
+}
+
+.mask {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.savegif {
+	height: 100%;
+	width: 100%;
+}
+
+i.iconfont {
+	display: inline-block
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.button-container {
+	background: #ea5e59;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 5rem;
+}
+
+.button-container a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.error-tip{
+	color: red !important;
+	font-size: 1rem;
+	letter-spacing: 0.04rem;
+}
+
+.flex{
+	display: flex;
+	display: -webkit-flex;
+}
+
+.space-between{
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.align-item-center{
+	align-items: center;
+}
+
+.{
+	align-content: ;
+}
+
+.height-20{
+	height: 1rem;
+}
+.height-50{
+	height: 2.5rem;
+}
+.height-100{
+	height: 5rem;
+}
+
+
+/*--------------------------- course & training plan --------------------------*/
+
+.header {
+	height: 21rem;
+	text-align: center;
+	position: relative;
+}
+
+.header .bg-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 0;
+	z-index: -1;
+}
+
+.header .bg-container .bg {
+	width: 100%;
+	height: 21rem;
+}
+
+.header .introduce {
+	padding-top: 5rem;
+}
+
+.introduce .summary {
+	display: inline-block;
+	position: relative;
+}
+
+.summary .slogan {
+	font-size: 3.15rem;
+	color: #ffffff;
+	letter-spacing: 0.63rem;
+	padding: 0 2.4rem 0.5rem;
+	border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+	height: 4rem;
+	position: relative;
+}
+
+.summary .slogan .line-vertical {
+	width: 0.1rem;
+	height: 3.4rem;
+	position: absolute;
+	right: 1.5rem;
+	top: 1.8rem;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.summary .schedule {
+	font-size: 1.1rem;
+	color: rgba(255, 255, 255, 0.75);
+	letter-spacing: 0.03rem;
+	padding-top: 1.25rem;
+}
+
+

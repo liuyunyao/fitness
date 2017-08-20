@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>重新规划运动</title>
+		<link rel="stylesheet" type="text/css" href="../css/global.css" />
+		<link rel="stylesheet" type="text/css" href="../css/replanning.css" />
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common_mobile.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fun/treadmill/replanning.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<form>
+			<div class="sex-group">
+				<div class="title"><span>性别</span></div>
+				<div class="sex-content clearfix">
+					<span class="select-item active" data-sexval="1">男</span>
+					<span class="select-item" data-sexval="2">女</span>
+					<input type="hidden" name="sex" value="1" />
+				</div>
+			</div>
+			<div class="input-container">
+				<div class="input-group">
+					<span class="name">年龄</span>
+					<div class="input-box">
+						<!--<label for="">请输入年龄</label>-->
+						<input id="datePicker" class="age" type="text" name="age" value="1992(25)" placeholder="请输入年龄" required="required" min="1970" max="2017"/>
+						<input id="datePicker" class="age" type="text" name="age" value="1992(25)" placeholder="请输入年龄" required="required" min="1970" max="2017"/>
+						<span class="error-tip"></span>
+					</div>
+					<span class="unit">岁</span>
+				</div>
+				<div class="input-group">
+					<span class="name">身高</span>
+					<div class="input-box">
+						<input class="height" type="text" name="height" value="" placeholder="请输入身高" required="required" />
+					</div>
+					<span class="unit">CM</span>
+				</div>
+				<div class="input-group">
+					<span class="name">体重</span>
+					<div class="input-box">
+						<input class="weight" type="text" name="weight" value="65" placeholder="请输入体重" required="required" />
+					</div>
+					<span class="unit">KG</span>
+				</div>
+			</div>
+			<div class="athleticgoal">
+				<div class="title"><span>运动目标</span></div>
+				<div class="athleticgoal-content clearfix">
+					<span class="select-item active">瘦身</span>
+					<span class="select-item">增肌</span>
+					<span class="select-item">塑形</span>
+					<span class="select-item">减压</span>
+					<input type="hidden" name="athleticgoal" value="瘦身" />
+				</div>
+			</div>
+			<div class="button-container" onclick="replanning_submit(this);">
+				<a href="javascript:void(0);">完成并生成训练计划</a>
+			</div>
+		</form>
+		<div class="height-100"></div>
+	</body>
+
+</html>

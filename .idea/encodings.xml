@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.cloud" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.rpc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com.nidifit.console.wx" charset="UTF-8" />
+  </component>
+</project>

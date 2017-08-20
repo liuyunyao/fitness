@@ -1,0 +1,38 @@
+        <li class="treeview activity" id="menu">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>数据库监控</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/monitor/server"><i class="fa fa-circle-o"></i> 服务器</a></li>
+            <li><a href="/monitor/database"><i class="fa fa-circle-o"></i> 数据库</a></li>
+           </ul>
+        </li>
+		<li class="treeview">
+          	<a href="#"><i class="fa fa-laptop"></i><span>数据库部署</span><i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+	            <li><a href=""><i class="fa fa-circle-o"></i> 服务器</a></li>
+	            <li><a href=""><i class="fa fa-circle-o"></i> 数据库</a></li>
+          </ul>
+		</li>
+        <li class="">
+			<a href="#"><i class="fa fa-edit"></i> <span>数据库管理</span></a>
+        </li>
+         <li class="treeview">
+			<a href="#"><i class="fa fa-edit"></i> <span>数据备份与恢复</span><i class="fa fa-angle-left pull-right"></i></a>
+	         <ul class="treeview-menu">
+	         	<li><a href=""><i class="fa fa-circle-o"></i> 数据备份</a></li>
+	            <li><a href=""><i class="fa fa-circle-o"></i> 数据恢复</a></li>
+			</ul>
+        </li>       
+ 
+        <li class="treeview">
+			<a href="#"><i class="fa fa-edit"></i> <span>系统管理</span><i class="fa fa-angle-left pull-right"></i></a>
+	         <ul class="treeview-menu">
+	         	<li><a href=""><i class="fa fa-circle-o"></i> </a></li>
+	            <li><a href=""><i class="fa fa-circle-o"></i> </a></li>
+	            <li><a href=""><i class="fa fa-circle-o"></i> </a></li>
+			</ul>
+        </li>             
+        

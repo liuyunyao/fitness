@@ -1,0 +1,156 @@
+#macro (showPage $url, $page)
+
+    #set($currentPage=$page.number+1)
+    #set($pagePos = 2) ##当前页的尾巴长度
+    #if($page.totalElements > $page.size && $page.totalElements>0)
+    <div class="page lr mr-20">
+        <nav>
+            <ul class="pagination">
+                <li><a>$!paging-count:$!page.totalPages$!paging-page $!page.totalElements$!paging-unit</a></li>
+                #if($page.hasPrevious()) ##如果能向上翻页
+                    <li><a href="$url.addQueryData("page",0)">$!paging-first</a></li>
+                    #set($pageurl= $currentPage - 2)
+                    <li><a href="$url.addQueryData("page",$pageurl)">$!paging-pre</a></li>
+                #else
+                    <li><a class="disabled">$!paging-first</a></li>
+                    <li><a class="disabled">$!paging-pre</a></li>
+                #end
+                #if($currentPage>=$pagePos+1)
+                    #if($currentPage>=4)
+                        <li><a href="#">....</a></li>
+                        #foreach($i in [$pagePos..1]) ##增加前面的尾巴
+                            #if($!currentPage - $i > 1)
+                                #set($pageIndex= $!currentPage - $i)
+                                #set($pageurl= $pageIndex - 1)
+                                <li><a href="$url.addQueryData("page",$pageurl)">$pageIndex</a></li>
+                            #end
+                        #end
+                    #else
+                        #foreach($i in [$pagePos..1]) ##增加前面的尾巴
+                            #set($pageIndex= $!currentPage - $i)
+                            #set($pageurl= $pageIndex - 1)
+                            #if($pageIndex>0)
+                                <li><a href="$url.addQueryData("page",$pageurl)">$pageIndex</a></li>
+                            #end
+                        #end
+                    #end
+
+                #else
+                    #if($!currentPage <= $pagePos)
+                        #foreach($i in [$pagePos..1]) ##增加前面的尾巴
+                            #set($pageIndex= $!currentPage - $i)
+                            #set($pageurl= $pageIndex - 1)
+                            #if($pageIndex>0)
+                                <li><a href="$url.addQueryData("page",$pageurl)">$pageIndex</a></li>
+                            #end
+                        #end
+                    #end
+                #end
+                <li><a class="active">$!currentPage</a></li> ##显示当前页号
+                #foreach($i in [1..$pagePos]) ##增加后面的尾巴
+                    #if($!page.totalPages - $!$!currentPage - $i >= 0)
+                        #set($pageIndex= $!currentPage + $!i)
+                        #set($pageurl= $pageIndex - 1)
+                        <li><a href="$url.addQueryData("page",$pageurl)">$pageIndex</a></li>
+                    #end
+                #end
+
+                #if($!page.totalPages - $!currentPage >= $pagePos+1)
+                    <li><a href="#">....</a></li>
+                #end ##显示后面的省略号
+                #if($page.nextPageable()) ##显示后面的页
+                    <li><a href="$url.addQueryData("page",$currentPage)">$!paging-next</a></li>
+                    #set($pageurl= $totalPages - 1)
+                    <li><a href="$url.addQueryData("page",$pageurl)">$!paging-last</a></li>
+                #else
+                    <li><a class="disabled">$!paging-next</a></li>
+                    <li><a class="disabled">$!paging-last</a>
+                    </li>
+
+                #end
+            </ul>
+        </nav>
+    </div>
+    #else
+
+    #end
+
+#end
+
+#macro (showEnumList $typeName $value)
+    #set($list=$enumUtils.getItemsByShortName($typeName))
+    #foreach(${item} in $list)
+    <option value="${item.getValue()}" #if(${item.getValue()}==$!value) selected #end> ${item.name}</option>
+    #end
+#end
+
+
+
+#macro (showEnumValue $typeName $value)
+    #if($stringUtils.isNull($value))
+    --
+    #else
+        #set($list=$enumUtils.getItemsByShortName($typeName))
+        #foreach(${item} in $list)
+            #if(${item.value}==$!value)$!{item.name}#end#end
+    #end
+#end
+
+#*
+   以下#if必须靠拢，不能空格，否则界面显示会有空格。
+ *#
+#macro (showEnumName $typeName $value)
+    #if($stringUtils.isNull($value))
+    --
+    #else
+        #set($itemTTT=$enumUtils.getEnumName($typeName,$value))
+        $!{itemTTT.name}
+    #end
+#end
+
+
+#macro (codeName $id)
+    #set($itemObj=$codeDataProvider.getItem($id))
+    #if($stringUtils.isNull($itemObj))
+    --
+    #else
+        $!itemObj.name
+    #end
+#end
+
+#macro (codeList  $code $value)
+    #set($list=$codeDataProvider.getItemsByParentCode($code))
+    #if($stringUtils.isNull($list))
+    --
+    #else
+        #foreach(${item} in $list)
+        <option value="${item.id}" #if(${item.id}==$!value) selected #end> ${item.name}</option>
+        #end
+    #end
+#end
+
+#macro (loadVm $id)
+    #set($list=$enumUtils.getItems($typeName))
+    #foreach(${item} in $list)
+        ${item.name}
+        #if(${item.value}==$!value)
+            $!{item.name}
+        #end
+    #end
+#end
+
+#*
+   只显示枚举中offLinePay为true的
+ *#
+#macro (showEnumListTrue $typeName $value)
+    #set($list=$enumUtils.getItemsByShortName($typeName))
+    #foreach(${item} in $list)
+        #if( ${item.offLinePay})
+        <option value="${item.getValue()}" #if(${item.getValue()}==$!value) selected #end> ${item.name}</option>
+        #end
+    #end
+#end
+
+
+#parse("/common/input/input-typeInfo.vm")
+

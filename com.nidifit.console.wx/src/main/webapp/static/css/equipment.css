@@ -1,0 +1,76 @@
+body {
+	background: #F2F2F2;
+}
+
+.select-title {
+	background: white;
+	padding: 0.9rem 1.5rem;
+}
+
+.select-name {
+	display: inline-block;
+}
+
+.select-title .active {
+	border-bottom: 0.2rem solid #ea5e59;
+}
+
+.select-name span {
+	font-size: 1.1rem;
+	color: #9b9b9b;
+	letter-spacing: 0.05rem;
+	padding: 0 1.1rem 0.5rem;
+	display: inline-block;
+}
+
+.equipment-intro {
+	height: 29.6rem;
+	width: 100%;
+	font-size: 1.1rem;
+	color: #ffffff;
+	letter-spacing: 0.03rem;
+	position: relative;
+}
+
+.equipment-intro .equipment-bg {
+	height: 29.6rem;
+	width: 100%;
+}
+
+.equipment-intro .mask-type {
+	position: absolute;
+	left: 0;
+	top: 2.15rem;
+	opacity: 0.22;
+	background: #000000;
+	border-radius: 0 10rem 10rem 0;
+	height: 3.3rem;
+	line-height: 3.3rem;
+	padding: 0 1.9rem 0 1.6rem;
+}
+
+.equipment-intro .mileage {
+	position: absolute;
+	bottom: 2.1rem;
+	left: 2.5rem;
+}
+
+.equipment-intro .mileage span {
+	font-size: 2.2rem;
+}
+
+.button-group {
+	padding: 4.35rem 3.85rem 0;
+}
+
+.button-container {
+	height: 4.2rem;
+	line-height: 4.2rem;
+	margin-bottom: 2.8rem;
+}
+
+.button-container a {
+	font-size: 1.7rem;
+	color: #ffffff;
+	letter-spacing: 0.18rem;
+}

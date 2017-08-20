@@ -1,0 +1,47 @@
+#### version 1.0.1
+#set($layout="layout/blank.vm")
+<head>
+    <title>信息录入</title>
+    #parse("/head/head.vm")
+    <link rel="stylesheet" type="text/css" href="${baseUrl}/static/css/userInfoInput.css?ver=${ver}"/>
+    <script type="text/javascript" src="${baseUrl}/static/js/fun/treadmill/userInfoInput.js?ver=${ver}"></script>
+</head>
+
+<body id="userInfoInput">
+<form id="inputForm">
+    <input name="token" value="${token}" type="hidden"/>
+    <!--Add gender and age Created by XCL 7/18/17 11:13 AM-->
+    <div class="sex-group">
+        <label for="">请选择性别：</label>
+        <div class="tworadio-switch">
+            <div class="radio-item" data-radio="1"><label>男</label></div>
+            <div class="radio-item" data-radio="2"><label>女</label></div>
+            <input class="fromfield" type="hidden" name="sexType" required="required" data-warning="性别不能为空" placeholder="必填" />
+        </div>
+    </div>
+    <div class="input-group">
+        <input type="number" name="age" id="age" placeholder="请输入您的年龄" value="${defaultAge}" required="required" />
+        <label for="">岁</label>
+        <div class="input-error"></div>
+    </div>
+    <div class="input-group">
+        <input type="number" name="height" id="height" placeholder="请输入您的身高" value="${defaultHeight}"/>
+        <label for="height">厘米/CM</label>
+        <div class="input-error"></div>
+    </div>
+    <div class="input-group">
+        <input type="number" name="weight" id="weight" placeholder="请输入您的体重" value="${defaultWeight}"/>
+        <label for="weight">千克/KG</label>
+        <div class="input-error"></div>
+    </div>
+    <div class="input-group treadmill-hidden">
+        <input type="number" name="phone" id="phone" placeholder="请输入您的手机号" value=""/>
+        <label for="phone">手机号码</label>
+        <div class="input-error"></div>
+    </div>
+    <div class="submit-container">
+        <a id="createBtn" type="button">创建账号</a>
+    </div>
+</form>
+<p class="skip" >跳过此步骤 >></p>
+</body>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com.nidifit.console.api" />
+        <module name="com.nidifit.console.cloud" />
+        <module name="com.nidifit.console.dao" />
+        <module name="com.nidifit.console.domain" />
+        <module name="com.nidifit.console.main" />
+        <module name="com.nidifit.console.rpc" />
+        <module name="com.nidifit.console.service" />
+        <module name="com.nidifit.console.wx" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com.nidifit.console" target="1.8" />
+      <module name="com.nidifit.console.api" target="1.8" />
+      <module name="com.nidifit.console.cloud" target="1.8" />
+      <module name="com.nidifit.console.dao" target="1.8" />
+      <module name="com.nidifit.console.domain" target="1.8" />
+      <module name="com.nidifit.console.main" target="1.8" />
+      <module name="com.nidifit.console.rpc" target="1.8" />
+      <module name="com.nidifit.console.service" target="1.8" />
+      <module name="com.nidifit.console.wx" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>个人主页</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/homepage.css" />
+		<script src="/static/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/js/common_mobile.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="userphoto"><img src="${profile.head_img_url}" /></div>
+			<p class="username">${profile.family_name}${profile.first_name}</p>
+			<div class="button-container" onclick="location='/v1/trainingplan'">
+				<a class="btn" href="javascript:void(0);">我的训练计划</a>
+			</div>
+			<div class="training-situation">
+				<div class="item">
+					<div class="">
+						<span class="number">${profile.total_train_duration}</span>
+						<p class="title">总训练（Min）</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="">
+						<span class="number">${profile.total_train_distance}</span>
+						<p class="title">总跑步（Km）</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="">
+						<span class="number">${profile.total_calories}</span>
+						<p class="title"> 总消耗（kcal）</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<ul class="menu">
+				<li class="item clearfix" onclick="location='/v1/homepage/sportrecord'">
+					<div class="item-title">
+						<div class="title-icon"><i class="iconfont icon-record"></i></div>
+						<div class="title-content"><span>运动记录</span></div>
+					</div>
+					<div class="item-content">
+						<div class="content-text"><span></span></div>
+						<div class="content-icon"><i class="iconfont icon-next"></i></div>
+					</div>
+				</li>
+				<li class="item clearfix" onclick="location='/v1/gymequipment'">
+					<div class="item-title">
+						<div class="title-icon"><i class="iconfont icon-equipment"></i></div>
+						<div class="title-content"><span>健身器材</span></div>
+					</div>
+					<div class="item-content">
+						<div class="content-text"><span>已绑定${profile.device_guid}</span></div>
+						<div class="content-icon"><i class="iconfont icon-next"></i></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

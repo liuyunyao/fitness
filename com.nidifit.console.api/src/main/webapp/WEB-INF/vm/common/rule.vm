@@ -1,0 +1,17 @@
+#*********************************************** rules & contact ************************************#
+<div id="footer" class="container-fluid">
+    <div class="footer-panel">
+        <div class="height-26"></div>
+        <div class="rw1">
+            <img src="/static/img/FNB DATA.png" /><a href="/static/html/privacy_policy.html" class="text-color-black2" target="_blank">$!common-privacy</a>
+        </div>
+        <div class="height-26"></div>
+        <p class="p1 text-color-black2">
+            <span class="sp1">$!common-tel:0844 800 1705</span>
+            <span class="sp1">$!common-fax:0844 800 1706</span>
+            <span class="sp2">$!common-email:<span class="font-bloder">stevejp@60living.com</span></span>
+        </p>
+        <p class="p1 text-color-black2">$!common-contact： City View House 5Union Street,Ardwick Manchester,M12 4JD</p>
+        <p class="p1 text-color-black2">$!common-copy</p>
+    </div>
+</div>

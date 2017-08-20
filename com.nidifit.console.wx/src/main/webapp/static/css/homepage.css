@@ -1,0 +1,141 @@
+body {
+	background-color: #F2F2F2;
+	font-size: 0;
+}
+
+.header {
+	width: 100%;
+	height: 22rem;
+	background: url(../img/homepage_header_bg.png) no-repeat;
+	background-size: cover;
+	padding: 2.4rem 0 1.4rem;
+	text-align: center;
+}
+
+.userphoto {
+	width: 8rem;
+	height: 8rem;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	padding: 0.5rem;
+	border-radius: 5rem;
+	margin: 0 auto;
+}
+
+.userphoto img {
+	width: 100%;
+	border-radius: 5rem;
+}
+
+.username {
+	font-size: 1.4rem;
+	color: #ffffff;
+	letter-spacing: 1px;
+	height: 2rem;
+	line-height: 2rem;
+	margin-top: 0.5rem;
+}
+
+.button-container {
+	margin: 1.5rem auto 0;
+	background: #ea5e59;
+	border-radius: 5rem;
+	width: 12.4rem;
+	height: 2.7rem;
+	line-height: 2.7rem;
+}
+
+a.btn {
+	font-size: 1.2rem;
+	color: #ffffff;
+	letter-spacing: 0.85px;
+	text-decoration: none;
+}
+
+.training-situation {
+	margin: 2.7rem auto 0;
+}
+
+.training-situation .item {
+	border-right: 1px solid rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.9);
+	letter-spacing: 1.6px;
+	width: 33%;
+	height: 3.5rem;
+	float: left;
+	text-align: center;
+	display: table;
+}
+
+.training-situation .item:last-of-type {
+	border: none;
+}
+
+.training-situation .item>div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.training-situation .item .number {
+	font-size: 1.3rem;
+}
+
+.training-situation .item .title {
+	font-size: 0.9rem;
+}
+
+.menu {
+	background: #ffffff;
+}
+
+.menu .item {
+	border-bottom: 1px solid #d0d0d0;
+}
+
+.menu .item .item-title {
+	padding-left: 3.8rem;
+	display: table;
+	height: 5.5rem;
+	float: left;
+}
+
+.menu .item .item-title>div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.menu .item .item-title .title-content span {
+	font-size: 1.4rem;
+	color: #676767;
+	letter-spacing: 0.8px;
+}
+
+.menu .item .item-title .title-icon i {
+	width: 2.3rem;
+	height: 2.3rem;
+	margin-right: 2.2rem;
+	
+}
+
+.menu .item .item-content {
+	display: table;
+	float: right;
+	height: 5.5rem;
+}
+
+.menu .item .item-content>div {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.menu .item .item-content .content-text span {
+	font-size: 1.2rem;
+	color: #d5d5d5;
+	letter-spacing: 0.69px;
+}
+
+.menu .item .item-content i {
+	width: 0.8rem;
+	height: 1.3rem;
+	margin: 0 2.2rem 0 0.8rem;
+	display: inline-block;
+}

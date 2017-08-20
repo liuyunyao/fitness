@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.iml" filepath="$PROJECT_DIR$/com.nidifit.console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.api/com.nidifit.console.api.iml" filepath="$PROJECT_DIR$/com.nidifit.console.api/com.nidifit.console.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.cloud/com.nidifit.console.cloud.iml" filepath="$PROJECT_DIR$/com.nidifit.console.cloud/com.nidifit.console.cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.dao/com.nidifit.console.dao.iml" filepath="$PROJECT_DIR$/com.nidifit.console.dao/com.nidifit.console.dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.domain/com.nidifit.console.domain.iml" filepath="$PROJECT_DIR$/com.nidifit.console.domain/com.nidifit.console.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.main/com.nidifit.console.main.iml" filepath="$PROJECT_DIR$/com.nidifit.console.main/com.nidifit.console.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.rpc/com.nidifit.console.rpc.iml" filepath="$PROJECT_DIR$/com.nidifit.console.rpc/com.nidifit.console.rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.service/com.nidifit.console.service.iml" filepath="$PROJECT_DIR$/com.nidifit.console.service/com.nidifit.console.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.nidifit.console.wx/com.nidifit.console.wx.iml" filepath="$PROJECT_DIR$/com.nidifit.console.wx/com.nidifit.console.wx.iml" />
+    </modules>
+  </component>
+</project>
